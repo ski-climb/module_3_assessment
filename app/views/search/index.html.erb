@@ -1,11 +1,11 @@
-<p><%= @stores.count %> total stores were found</p>
+<p><%= @stores_count %> total stores were found</p>
 
-<ul>
-  <%= @stores.each do |store| %>
+<% @stores.each do |store| %>
+  <ul class="store">
     <li>Store name: <%= store.long_name %></li>
     <li>City: <%= store.city %></li>
     <li>Distance: <%= store.distance %></li>
     <li>Phone: <%= store.phone %></li>
     <li>Store type:<%= store.store_type %></li>
-  <% end %>
-</ul>
+  </ul>
+<% end %>
