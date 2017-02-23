@@ -9,7 +9,12 @@ class API::V1::ItemsController < ActionController::API
   end
 
   def create
-
+    item = Item.new(item_params)
+    if item.save
+      render json: item, status: 201
+    else
+      render nothing: true, status: 422
+    end
   end
 
   def destroy
@@ -25,4 +30,10 @@ class API::V1::ItemsController < ActionController::API
       render nothing: true, status: 404
     end
   end
+
+  private
+
+    def item_params
+      params.require(:item).permit(:name, :description, :image_url)
+    end
 end
