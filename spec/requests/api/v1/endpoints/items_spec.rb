@@ -34,4 +34,14 @@ describe "Items API" do
       expect(item["update_at"]).to be_nil
     end
   end
+
+  context "deleting one item by id" do
+    let!(:item_3)  { Item.create(name: "item 3", description: "logs", image_url: "https://s3.amazonaws.com/happy-trails/public/uploads/obstacle-2017-02-20t19-08-44-07-00") }
+
+    it "deletes the item" do
+      delete "api/v1/items/#{item_3.id}"
+
+      binding.pry
+    end
+  end
 end
