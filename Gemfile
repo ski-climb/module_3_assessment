@@ -14,6 +14,7 @@ gem "less-rails-bootstrap"
 gem "figaro"
 gem "faraday"
 gem "active_model_serializers"
+gem "rails-api"
 
 group :development do
   gem "spring"
