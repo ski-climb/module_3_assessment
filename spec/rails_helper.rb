@@ -32,7 +32,7 @@ ActiveRecord::Migration.maintain_test_schema!
 VCR.configure do |config|
   config.cassette_library_dir = Rails.root.join("spec", "fixtures", "vcr_cassettes")
   config.hook_into :webmock
-  # config.filter_sensitive_data('<S3_KEY>') { ENV["S3_KEY"] }
+  config.filter_sensitive_data('<BEST_BUY_KEY>') { ENV["BEST_BUY_KEY"] }
 end
 
 Shoulda::Matchers.configure do |config|
@@ -57,6 +57,8 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 
+  config.include FeatureHelpers, type: :feature
+  config.include ModelHelpers, type: :model
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
   # `post` in specs under `spec/controllers`.

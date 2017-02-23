@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.bestbuy.com/v1/stores(area(80202,25))?apiKey=6tmxnbn286qhnt4act7h3tt8&format=json&show=longName,city,distance,phone,storeType
+    uri: https://api.bestbuy.com/v1/stores(area(80202,25))?apiKey=<BEST_BUY_KEY>&format=json&pageSize=16&show=longName,city,distance,phone,storeType
     body:
       encoding: US-ASCII
       string: ''
@@ -29,13 +29,13 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Thu, 23 Feb 2017 16:40:55 GMT
+      - Thu, 23 Feb 2017 18:42:18 GMT
       Server:
       - Best Buy Public APIs
       X-Cache-Hit:
       - 'false'
       Content-Length:
-      - '2068'
+      - '3098'
       Connection:
       - keep-alive
     body:
@@ -43,14 +43,14 @@ http_interactions:
       string: |-
         {
           "from": 1,
-          "to": 10,
+          "to": 16,
           "currentPage": 1,
           "total": 16,
-          "totalPages": 2,
+          "totalPages": 1,
           "queryTime": "0.009",
-          "totalTime": "0.023",
+          "totalTime": "0.100",
           "partial": false,
-          "canonicalUrl": "/v1/stores(area(\"80202\",25))?show=longName,city,distance,phone,storeType&format=json&apiKey=6tmxnbn286qhnt4act7h3tt8",
+          "canonicalUrl": "/v1/stores(area(\"80202\",25))?show=longName,city,distance,phone,storeType&pageSize=16&format=json&apiKey=<BEST_BUY_KEY>",
           "stores": [
             {
               "longName": "BEST BUY MOBILE - CHERRY CREEK SHOPPING CENTER",
@@ -121,10 +121,52 @@ http_interactions:
               "distance": 11.02,
               "phone": "303-797-3246",
               "storeType": "Big Box"
+            },
+            {
+              "longName": "BEST BUY - I70 & TOWER RD",
+              "city": "AURORA",
+              "distance": 11.65,
+              "phone": "303-373-9284",
+              "storeType": "Big Box"
+            },
+            {
+              "longName": "BEST BUY MOBILE - FLATIRON CROSSING MALL",
+              "city": "BROOMFIELD",
+              "distance": 14.43,
+              "phone": "303-466-8624",
+              "storeType": "Mobile SAS"
+            },
+            {
+              "longName": "BEST BUY - S.E. DENVER",
+              "city": "LONE TREE",
+              "distance": 14.95,
+              "phone": "303-649-9474",
+              "storeType": "Big Box"
+            },
+            {
+              "longName": "BEST BUY - S.E. AURORA",
+              "city": "AURORA",
+              "distance": 18.2,
+              "phone": "303-693-0166",
+              "storeType": "Big Box"
+            },
+            {
+              "longName": "BEST BUY - PARKER",
+              "city": "PARKER",
+              "distance": 20.82,
+              "phone": "303-840-5501",
+              "storeType": "Big Box"
+            },
+            {
+              "longName": "BEST BUY - BOULDER",
+              "city": "BOULDER",
+              "distance": 22.79,
+              "phone": "303-938-2889",
+              "storeType": "Big Box"
             }
           ],
           "warnings": "Distances are in terms of miles (default)"
         }
     http_version: 
-  recorded_at: Thu, 23 Feb 2017 16:41:08 GMT
+  recorded_at: Thu, 23 Feb 2017 18:42:30 GMT
 recorded_with: VCR 3.0.3
