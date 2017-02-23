@@ -2,8 +2,16 @@ class SearchController < ApplicationController
 
   def index
     response = Faraday.get("https://api.bestbuy.com/v1/stores(area(80202,25))?format=json&show=longName,city,distance,phone,storeType&apiKey=#{ENV['BEST_BUY_KEY']}")
-    raw_stores = JSON.parse(response.body, symbolize_names: true)[:stores]
-    @stores = raw_stores.map do |raw_store|
+    puts response.body
+    raw_stores_data = JSON.parse(response.body, symbolize_names: true)
+    puts raw_stores_data
+    @raw_stores = raw_stores_data[:stores]
+    puts "***************"
+    puts @raw_stores
+    puts "***************"
+    puts @raw_stores.class
+    puts @raw_stores.length
+    @stores = @raw_stores.map do |raw_store|
       Store.new(raw_store)
     end
     binding.pry
