@@ -1,5 +1,5 @@
 class API::V1::ItemsController < ApplicationController
-  include ApplicationController::API
+  # include ActionController::API
 
   def index
     render json: Item.all
@@ -10,7 +10,11 @@ class API::V1::ItemsController < ApplicationController
   end
 
   def destroy
-    item = Item.find(params[:id])
+    begin
+      item = Item.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+    end
+
     if item
       item.destroy
       render nothing: true, status: 204

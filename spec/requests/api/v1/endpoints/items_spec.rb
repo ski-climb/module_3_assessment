@@ -38,10 +38,20 @@ describe "Items API" do
   context "deleting one item by id" do
     let!(:item_3)  { Item.create(name: "item 3", description: "logs", image_url: "https://s3.amazonaws.com/happy-trails/public/uploads/obstacle-2017-02-20t19-08-44-07-00") }
 
-    it "deletes the item" do
-      delete "api/v1/items/#{item_3.id}"
+    context "the item exits" do
+      it "deletes the item" do
+        delete "api/v1/items/#{item_3.id}"
 
-      binding.pry
+        expect(response.status).to eq 204
+      end
+    end
+
+    context "the item cannot be found" do
+      it "returns a 404 status" do
+        delete "api/v1/items/12341234"
+
+        expect(response.status).to eq 404
+      end
     end
   end
 end
