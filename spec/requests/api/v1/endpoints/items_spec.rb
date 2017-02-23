@@ -54,4 +54,34 @@ describe "Items API" do
       end
     end
   end
+
+  context "creating an item" do
+    let!(:name) { "cats" }
+    let!(:description) { "what it sounds like" }
+    let!(:image_url) { "https://s3.amazonaws.com/happy-trails/public/uploads/landslide-2017-02-20t19-09-07-07-00" }
+
+    context "the item is not created" do
+      it "returns 422 response code" do
+        post "api/v1/items", item: {}
+
+        expect(response.status).to eq 422
+      end
+    end
+
+    context "the item cannot be found" do
+      it "returns a 404 status" do
+        post "api/v1/items", item: { name: name, description: description, image_url: image_url }
+
+        item = JSON.parse(response.body)
+
+        expect(response.status).to eq 404
+        expect(item["name"]). to eq "item 1"
+        expect(item["description"]). to eq "lovely"
+        expect(item["image_url"]). to eq "https://s3.amazonaws.com/happy-trails/public/uploads/obstacle-2017-02-20t19-08-44-07-00"
+        expect(item["created_at"]).to be_nil
+        expect(item["update_at"]).to be_nil
+      end
+    end
+
+  end
 end

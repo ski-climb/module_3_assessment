@@ -1,5 +1,4 @@
-class API::V1::ItemsController < ApplicationController
-  # include ActionController::API
+class API::V1::ItemsController < ActionController::API
 
   def index
     render json: Item.all
@@ -7,6 +6,10 @@ class API::V1::ItemsController < ApplicationController
 
   def show
     render json: Item.find(params[:id])
+  end
+
+  def create
+
   end
 
   def destroy
