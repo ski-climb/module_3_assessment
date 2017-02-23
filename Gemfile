@@ -21,6 +21,7 @@ end
 
 group :development, :test do
   gem "pry", :require => "pry"
+  gem "byebug"
   gem "rspec-rails"
   gem "capybara"
   gem "launchy"

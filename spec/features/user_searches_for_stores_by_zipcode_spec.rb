@@ -17,7 +17,7 @@ describe "User searches for stores by zipcode" do
     fill_in "search", with: "80202"
     click_on "Search"
 
-    expect(page).to have_path(search_path)
+    expect(current_path).to eq "/search"
     expect(page).to have_content "16 total stores"
     expect(page).to have_css("store", count: 10)
     # get a specific piece of info from Postman and check for that in this test: long name, city, distance, phone number, store type
