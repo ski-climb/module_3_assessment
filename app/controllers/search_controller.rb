@@ -14,7 +14,6 @@ class SearchController < ApplicationController
     @stores = @raw_stores.map do |raw_store|
       Store.new(raw_store)
     end
-    binding.pry
   end
 end
 
