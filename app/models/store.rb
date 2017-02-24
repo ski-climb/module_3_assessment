@@ -12,4 +12,11 @@ class Store
     @phone      = data[:phone]
     @store_type = data[:storeType]
   end
+
+  def self.stores_by_zipcode(zipcode)
+    raw_stores = BestBuyService.stores_by_zipcode(zipcode)
+    raw_stores.map do |raw_store|
+      Store.new(raw_store)
+    end[0..9]
+  end
 end
