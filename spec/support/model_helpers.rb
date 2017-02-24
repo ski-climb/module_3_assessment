@@ -2,7 +2,7 @@ module ModelHelpers
 
   def raw_store_response
       {
-        "longName": "BEST BUY MOBILE - CHERRY CREEK SHOPPING CENTER",
+        "longName": "Really long store name",
         "city": "DENVER",
         "distance": 3.45,
         "phone": "303-270-9189",

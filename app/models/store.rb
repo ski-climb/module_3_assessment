@@ -6,10 +6,10 @@ class Store
               :store_type 
 
   def initialize(data = {})
-    data[:longName]  = @long_name
-    data[:city]      = @city
-    data[:distance]  = @distance
-    data[:phone]     = @phone
-    data[:storeType] = @store_type
+    @long_name  = data[:longName]
+    @city       = data[:city]
+    @distance   = data[:distance]
+    @phone      = data[:phone]
+    @store_type = data[:storeType]
   end
 end

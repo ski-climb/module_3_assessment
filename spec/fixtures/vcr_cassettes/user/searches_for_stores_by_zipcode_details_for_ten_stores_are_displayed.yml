@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Thu, 23 Feb 2017 18:42:18 GMT
+      - Fri, 24 Feb 2017 04:28:19 GMT
       Server:
       - Best Buy Public APIs
       X-Cache-Hit:
@@ -48,7 +48,7 @@ http_interactions:
           "total": 16,
           "totalPages": 1,
           "queryTime": "0.009",
-          "totalTime": "0.100",
+          "totalTime": "0.024",
           "partial": false,
           "canonicalUrl": "/v1/stores(area(\"80202\",25))?show=longName,city,distance,phone,storeType&pageSize=16&format=json&apiKey=<BEST_BUY_KEY>",
           "stores": [
@@ -168,5 +168,5 @@ http_interactions:
           "warnings": "Distances are in terms of miles (default)"
         }
     http_version: 
-  recorded_at: Thu, 23 Feb 2017 18:42:30 GMT
+  recorded_at: Fri, 24 Feb 2017 04:28:31 GMT
 recorded_with: VCR 3.0.3

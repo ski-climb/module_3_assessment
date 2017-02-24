@@ -1,0 +1,102 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bestbuy.com/v1/stores(area(85745,25))?apiKey=<BEST_BUY_KEY>&format=json&pageSize=16&show=longName,city,distance,phone,storeType
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, x-requested-with, accept
+      Access-Control-Allow-Methods:
+      - GET
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '3628800'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 24 Feb 2017 04:52:36 GMT
+      Server:
+      - Best Buy Public APIs
+      X-Cache-Hit:
+      - 'false'
+      Content-Length:
+      - '1383'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "from": 1,
+          "to": 6,
+          "currentPage": 1,
+          "total": 6,
+          "totalPages": 1,
+          "queryTime": "0.018",
+          "totalTime": "0.026",
+          "partial": false,
+          "canonicalUrl": "/v1/stores(area(\"85745\",25))?show=longName,city,distance,phone,storeType&pageSize=16&format=json&apiKey=<BEST_BUY_KEY>",
+          "stores": [
+            {
+              "longName": "BEST BUY MOBILE - TUCSON MALL",
+              "city": "TUCSON",
+              "distance": 6.65,
+              "phone": "520-292-0077",
+              "storeType": "Mobile SAS"
+            },
+            {
+              "longName": "BEST BUY - TUCSON",
+              "city": "TUCSON",
+              "distance": 7.25,
+              "phone": "520-696-3442",
+              "storeType": "Big Box"
+            },
+            {
+              "longName": "BEST BUY - SW TUCSON",
+              "city": "TUCSON",
+              "distance": 8.65,
+              "phone": "520-294-7660",
+              "storeType": "Big Box"
+            },
+            {
+              "longName": "BEST BUY MOBILE - PARK PLACE",
+              "city": "TUCSON",
+              "distance": 12.8,
+              "phone": "520-745-3080",
+              "storeType": "Mobile SAS"
+            },
+            {
+              "longName": "BEST BUY - EAST TUCSON",
+              "city": "TUCSON",
+              "distance": 12.86,
+              "phone": "520-745-0209",
+              "storeType": "Big Box"
+            },
+            {
+              "longName": "BEST BUY - ORO VALLEY",
+              "city": "ORO VALLEY",
+              "distance": 14.25,
+              "phone": "520-877-6399",
+              "storeType": "Big Box"
+            }
+          ],
+          "warnings": "Distances are in terms of miles (default)"
+        }
+    http_version: 
+  recorded_at: Fri, 24 Feb 2017 04:52:26 GMT
+recorded_with: VCR 3.0.3
